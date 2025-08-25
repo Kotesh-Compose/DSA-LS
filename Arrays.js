@@ -66,7 +66,7 @@ function getLeaders(nums) {
     }
     return leaders
 }
-console.log(getLeaders(nums2));
+// console.log(getLeaders(nums2)); [ 17, 5, 2 ]
 
 function getLeadersUsingSuffixMax(nums) {
 
@@ -84,4 +84,27 @@ function getLeadersUsingSuffixMax(nums) {
     leaders.reverse()
     return leaders
 }
-console.log(getLeadersUsingSuffixMax(nums2));
+// console.log(getLeadersUsingSuffixMax(nums2)); [ 17, 5, 2 ]
+
+// Given an array arr[], check if it is sorted in ascending order or not. Equal values are allowed in an array and two consecutive equal values are considered sorted.
+
+
+
+// Iterative approach
+let nums3 = [10, 20, 30, 40, 50];
+
+let nums4 = [1, 2, 3, 10, 4]
+function checkSorted(nums) {
+    for (let i = 0; i < nums.length - 1; i++) {
+        // console.log(nums[i], "current");
+        // console.log(nums[i + 1], "it's Rightie");
+        if (nums[i + 1] < nums[i]) {
+            return "Not Sorted"
+        }
+    }
+    return "Sorted"
+}
+
+// console.log(checkSorted(nums3)); Sorted
+// console.log(checkSorted(nums4)); Not Sorted
+
