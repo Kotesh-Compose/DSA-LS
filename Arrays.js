@@ -67,3 +67,21 @@ function getLeaders(nums) {
     return leaders
 }
 console.log(getLeaders(nums2));
+
+function getLeadersUsingSuffixMax(nums) {
+
+    let leaders = [];
+    let maxRight = nums[nums.length - 1];
+    leaders.push(maxRight);
+
+
+    for (let i = nums.length - 2; i >= 0; i--) {
+        if (nums[i] > maxRight) {
+            maxRight = nums[i];
+            leaders.push(maxRight);
+        }
+    }
+    leaders.reverse()
+    return leaders
+}
+console.log(getLeadersUsingSuffixMax(nums2));
