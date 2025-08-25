@@ -108,3 +108,27 @@ function checkSorted(nums) {
 // console.log(checkSorted(nums3)); Sorted
 // console.log(checkSorted(nums4)); Not Sorted
 
+// Remove duplicates from Sorted Array
+
+
+// Given a sorted array arr[] of size n, the goal is to rearrange the array so that all distinct elements appear at the beginning in sorted order. Additionally, return the length of this distinct sorted subarray.
+
+function returnDiscinctsFromSorted(nums) {
+    let distincElArr = [];
+    let distinctEl = nums[0];
+    distincElArr.push(distinctEl);
+
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] === distinctEl) {
+            continue;
+        } else {
+            distinctEl = nums[i];
+            distincElArr.push(distinctEl);
+        }
+    }
+    return distincElArr;
+}
+
+// console.log(returnDiscinctsFromSorted([2, 2, 2, 2, 2])); ---> [2]
+// console.log(returnDiscinctsFromSorted([1, 2, 2, 3, 4, 4, 4, 5, 5])); --->  [ 1, 2, 3, 4, 5 ]
+// console.log(returnDiscinctsFromSorted([1, 2, 3]));---> [ 1, 2, 3 ]
