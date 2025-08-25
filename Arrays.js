@@ -44,3 +44,26 @@ function findInSortedArr(arr, num) {
     return -1
 }
 // console.log(findInSortedArr(sortedNums, toBeFoundNum));
+
+// Given an array arr[] of size n, the task is to find all the Leaders in the array. An element is a Leader if it is greater than or equal to all the elements to its right side.
+
+// Note: The rightmost element is always a leader.
+
+let nums2 = [16, 17, 4, 3, 5, 2];
+
+function getLeaders(nums) {
+    let leaders = [];
+    outer: for (let i = 0; i < nums.length; i++) {
+        console.log("current Number--->", nums[i]);
+
+        for (let j = i + 1; j < nums.length; j++) {
+            console.log("it's righties", nums[j]);
+            if (nums[j] > nums[i]) {
+                continue outer;
+            }
+        }
+        leaders.push(nums[i]);
+    }
+    return leaders
+}
+console.log(getLeaders(nums2));
