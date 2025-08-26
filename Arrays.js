@@ -132,3 +132,33 @@ function returnDiscinctsFromSorted(nums) {
 // console.log(returnDiscinctsFromSorted([2, 2, 2, 2, 2])); ---> [2]
 // console.log(returnDiscinctsFromSorted([1, 2, 2, 3, 4, 4, 4, 5, 5])); --->  [ 1, 2, 3, 4, 5 ]
 // console.log(returnDiscinctsFromSorted([1, 2, 3]));---> [ 1, 2, 3 ]
+
+// Generating All Subarrays
+
+// Given an array arr[], the task is to generate all the possible subarrays of the given array.
+
+// Input: arr[] = [1, 2, 3]
+// Output: [ [1], [1, 2], [2], [1, 2, 3], [2, 3], [3] ]
+
+// Input: arr[] = [1, 2]
+// Output: [ [1], [1, 2], [2] ]
+
+
+function generateSubArrays(arr) {
+    let mainArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i; j < arr.length; j++) {
+            let subArr = [];
+            console.log("i", i);
+            console.log("j", j);
+            console.log("-----------------------");
+            for (let k = i; k <= j; k++) {
+                subArr.push(arr[k]);
+            }
+            mainArr.push(subArr);
+        }
+    }
+    return mainArr;
+}
+
+console.log(generateSubArrays([1, 2, 3]))
