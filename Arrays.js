@@ -183,3 +183,39 @@ function reverseArr(arr) {
 }
 
 console.log(reverseArr([1, 2, 3, 4, 5]))
+
+
+// Rotate array from Right by d places
+
+function rotateArrByDPlaces(arr, d) {
+    for (let j = 0; j < d; j++) {
+        let temp1 = arr[0];
+        arr[0] = arr[arr.length - 1];
+
+        for (let i = 1; i < arr.length; i++) {
+            let temp2 = arr[i];
+            arr[i] = temp1;
+            temp1 = temp2
+        }
+    }
+
+    return arr;
+}
+
+// console.log(rotateArrByDPlaces([1, 2, 3, 4, 5], 2)); ---> [4,5,1,2,3]
+
+// Rotate array from Left by d places
+
+function rotateArrByDPlacesFromLeft(arr, d) {
+    for (let j = 0; j < d; j++) {
+        let temp = arr[0];
+
+        for (let i = 0; i < arr.length - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr[arr.length - 1] = temp;
+    }
+    return arr;
+}
+
+// console.log(rotateArrByDPlacesFromLeft([1, 2, 3, 4, 5], 2)); --->   [3,4,5,1,2]
