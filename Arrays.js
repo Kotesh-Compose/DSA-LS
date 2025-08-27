@@ -161,4 +161,25 @@ function generateSubArrays(arr) {
     return mainArr;
 }
 
-console.log(generateSubArrays([1, 2, 3]))
+console.log(generateSubArrays([1, 2, 3]));
+
+
+// Array Reverse
+// Reverse an array Reversing an array means rearranging the elements such that the first element becomes the last, the second element becomes second last and so on.
+
+
+function reverseArr(arr) {
+    let left = 0;
+    let right = arr.length - 1;
+
+    while (left < right) {
+        let temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
+        left++;
+        right--;
+    }
+    return arr;
+}
+
+console.log(reverseArr([1, 2, 3, 4, 5]))
