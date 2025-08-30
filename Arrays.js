@@ -219,3 +219,21 @@ function rotateArrByDPlacesFromLeft(arr, d) {
 }
 
 // console.log(rotateArrByDPlacesFromLeft([1, 2, 3, 4, 5], 2)); --->   [3,4,5,1,2]
+
+function moveZeroesToEnd(nums) {
+    let trackingCount = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] !== 0) {
+            nums[trackingCount] = nums[i];
+            trackingCount++;
+        }
+    }
+    while (trackingCount < nums.length) {
+        nums[trackingCount] = 0;
+        trackingCount++;
+    }
+    return nums;
+}
+
+console.log(moveZeroesToEnd([0, 2, 3, 0, 4, 5, 0, 6, 7]));
