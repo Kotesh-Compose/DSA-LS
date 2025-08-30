@@ -237,3 +237,36 @@ function moveZeroesToEnd(nums) {
 }
 
 console.log(moveZeroesToEnd([0, 2, 3, 0, 4, 5, 0, 6, 7]));
+
+
+// Minimum increment by k operations to make all equal
+// You are given an array of n-elements, you have to find the number of operations needed to make all elements of array equal.
+//  Where a single operation can increment an element by k. 
+// If it is not possible to make all elements equal print -1.
+
+function incrOpsToEqualizeArr(arr, k) {
+    // Get the max element of the array 
+    let maxElement = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > maxElement) {
+            maxElement = arr[i]
+        }
+    }
+    // console.log("Max element from the array", maxElement);
+    let resultOperations = 0;
+    for (let j = 0; j < arr.length; j++) {
+        if (((maxElement - arr[j]) % k) !== 0) {
+            return -1;
+        } else {
+            // console.log("by value", (maxElement - arr[j]) / k)
+            resultOperations += Math.round((maxElement - arr[j]) / k);
+            // console.log(resultOperations, "******")
+        }
+    }
+    return resultOperations
+}
+
+console.log(incrOpsToEqualizeArr([4, 7, 19, 16], 3)); // 10
+console.log(incrOpsToEqualizeArr([4, 4, 4, 4], 3)); // 0
+
+
