@@ -266,7 +266,25 @@ function incrOpsToEqualizeArr(arr, k) {
     return resultOperations
 }
 
-console.log(incrOpsToEqualizeArr([4, 7, 19, 16], 3)); // 10
-console.log(incrOpsToEqualizeArr([4, 4, 4, 4], 3)); // 0
+// console.log(incrOpsToEqualizeArr([4, 7, 19, 16], 3)); // 10
+// console.log(incrOpsToEqualizeArr([4, 4, 4, 4], 3)); // 0
 
 
+// Minimum cost to make an array to size 1 by removing the larger from a pair.
+
+// Problem explanation/understanding:
+// At an operation select a pair, remove the larger one, by paying a cost value equal to the small element of the selected pair.
+
+
+function costToMakeArrayToOne(arr) {
+    let iniaitlaMin = Number.MAX_VALUE;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < iniaitlaMin) {
+            iniaitlaMin = arr[i]
+        }
+    }
+    // console.log(iniaitlaMin);
+
+    return (arr.length - 1) * iniaitlaMin;
+}
+console.log(costToMakeArrayToOne([4, 3, 2]));  // 4
