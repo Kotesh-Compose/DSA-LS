@@ -161,7 +161,7 @@ function generateSubArrays(arr) {
     return mainArr;
 }
 
-console.log(generateSubArrays([1, 2, 3]));
+// console.log(generateSubArrays([1, 2, 3]));
 
 
 // Array Reverse
@@ -182,7 +182,7 @@ function reverseArr(arr) {
     return arr;
 }
 
-console.log(reverseArr([1, 2, 3, 4, 5]))
+// console.log(reverseArr([1, 2, 3, 4, 5]))
 
 
 // Rotate array from Right by d places
@@ -236,7 +236,7 @@ function moveZeroesToEnd(nums) {
     return nums;
 }
 
-console.log(moveZeroesToEnd([0, 2, 3, 0, 4, 5, 0, 6, 7]));
+// console.log(moveZeroesToEnd([0, 2, 3, 0, 4, 5, 0, 6, 7]));
 
 
 // Minimum increment by k operations to make all equal
@@ -287,4 +287,29 @@ function costToMakeArrayToOne(arr) {
 
     return (arr.length - 1) * iniaitlaMin;
 }
-console.log(costToMakeArrayToOne([4, 3, 2]));  // 4
+// console.log(costToMakeArrayToOne([4, 3, 2]));  // 4
+
+
+
+// Duplicate within K Distance in an Array
+// Given an integer array arr[] and an integer k, determine whether there exist two indices i and j such that arr[i] == arr[j] and |i - j| ≤ k. If such a pair exists, return 'Yes', otherwise return 'No'
+
+
+function checkDuplicateWithinKDistance(arr, k) {
+    for (let i = 0; i < arr.length; i++) {
+        // console.log("for single digit", arr[i]);
+        for (let j = i + 1; j < arr.length; j++) {
+            // console.log(arr[j]);
+            if (arr[i] === arr[j] && Math.abs(i - j) <= k) {
+                // console.log("distance lessthan K", Math.abs(i - j), "<=", k);
+                return "Yes";
+            }
+        }
+        // console.log("--------------------------")
+    }
+    return "No";
+}
+// console.log(checkDuplicateWithinKDistance([1, 2, 3, 4, 1, 2, 3, 4], 3)); // No
+// console.log(checkDuplicateWithinKDistance([1, 2, 3, 1, 4, 5], 3)); // Yes
+// console.log(checkDuplicateWithinKDistance([1, 2, 3, 4, 5], 3)); // No
+
